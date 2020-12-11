@@ -64,7 +64,7 @@ const getdocument = async () => {
   const result = await Kdata.aggregate([
     { $match : { name : "dream"}},
     { $group : {
-      _id : "name",
+      _id : "$name",
       avgchapters : {$avg : "$chapter"}
       }
     },
